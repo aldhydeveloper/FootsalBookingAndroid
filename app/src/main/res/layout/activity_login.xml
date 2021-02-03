@@ -40,22 +40,22 @@
     <LinearLayout
         android:id="@+id/llForm"
         android:layout_width="300dp"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
         android:layout_centerInParent="true"
         android:gravity="center"
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/edtUsername"
+            android:id="@+id/edtEmail"
             android:layout_width="250dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:padding="8dp"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:textColor="@color/lightBlack"
             android:background="@drawable/bg_edt"
-            android:layout_marginBottom="8dp"
-            android:hint="Username"/>
+            android:layout_marginBottom="10dp"
+            android:hint="Email"/>
 
         <EditText
             android:id="@+id/edtPassword"

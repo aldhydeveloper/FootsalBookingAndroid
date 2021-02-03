@@ -1,15 +1,14 @@
 package com.ns.queenfutsal.Model;
 
 public class Users {
-    private String id, fullName, userName, password, email, noHp;
+    private String id, fullName, password, email, noHp;
 
     public Users() {
     }
 
-    public Users(String id, String fullName, String userName, String password, String email, String noHp) {
+    public Users(String id, String fullName, String password, String email, String noHp) {
         this.id = id;
         this.fullName = fullName;
-        this.userName = userName;
         this.password = password;
         this.email = email;
         this.noHp = noHp;
@@ -29,14 +28,6 @@ public class Users {
 
     public void setFullName(String fullName) {
         this.fullName = fullName;
-    }
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
     }
 
     public String getPassword() {

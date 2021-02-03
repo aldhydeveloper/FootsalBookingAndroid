@@ -55,15 +55,6 @@
             android:textColor="@color/lightBlack" />
 
         <EditText
-            android:id="@+id/edtUsername"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"
-            android:layout_marginBottom="10dp"
-            android:hint="Username"
-            android:padding="8dp"
-            android:textColor="@color/lightBlack" />
-
-        <EditText
             android:id="@+id/edtPassword"
             android:layout_width="match_parent"
             android:layout_height="60dp"
@@ -100,7 +91,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/btnRegister"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="20dp"
         android:text="Sudah Punya Akun!"
         android:textColor="@color/lightBlack"
         android:textSize="18sp"
@@ -111,9 +102,12 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="50dp"
         android:background="@drawable/bg_button"
         android:text="Daftar"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:textAllCaps="false"
         android:textSize="20sp" />
