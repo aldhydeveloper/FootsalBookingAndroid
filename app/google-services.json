@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "464772458135",
+    "project_id": "queenfutsal-8ca84",
+    "storage_bucket": "queenfutsal-8ca84.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:464772458135:android:149f8ccd589dca70f42bd2",
+        "android_client_info": {
+          "package_name": "com.ns.queenfutsal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "464772458135-prulc7frlled9o85gr6sia0ugv6u8khh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDITADJmeieJot1_yx_K-p7vvILltfQWJQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "464772458135-prulc7frlled9o85gr6sia0ugv6u8khh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
