@@ -1,4 +1,4 @@
-package com.ns.queenfutsal;
+package com.ns.queenfutsal.Activity;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -12,11 +12,10 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.core.Tag;
 import com.ns.queenfutsal.Model.Users;
+import com.ns.queenfutsal.R;
 
 import java.util.Objects;
 
