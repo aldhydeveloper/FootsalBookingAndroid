@@ -77,26 +77,10 @@ public class LoginActivity extends AppCompatActivity {
             }else{
                 mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(task -> {
                     if (task.isSuccessful()){
+
                         loading.dismissWithAnimation();
-                        Common.userId = Objects.requireNonNull(mAuth.getCurrentUser()).getUid();
-
-                        myRef.child(Common.userId).addListenerForSingleValueEvent(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                Users users = snapshot.getValue(Users.class);
-                                assert users != null;
-                                Common.Fullname = users.getFullName();
-                                Common.Password = users.getPassword();
-                                Common.Email    = users.getEmail();
-                                Common.NoHp     = users.getNoHp();
-                            }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError error) {
-
-                            }
-                        });
                         startActivity(new Intent(this, MainActivity.class));
+
                     }else{
                         loading.dismissWithAnimation();
                         SweetAlertDialog progress = new SweetAlertDialog(this, SweetAlertDialog.ERROR_TYPE);
