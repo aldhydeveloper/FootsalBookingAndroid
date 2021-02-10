@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,7 @@ import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.ns.queenfutsal.Adapter.BookingAdapter;
+import com.ns.queenfutsal.Common.Common;
 import com.ns.queenfutsal.Model.Lapangan;
 import com.ns.queenfutsal.R;
 import com.squareup.picasso.Picasso;
@@ -48,15 +50,17 @@ public class BookingActivity extends AppCompatActivity {
         btnBack = findViewById(R.id.btnBack);
 
         reference = FirebaseDatabase.getInstance().getReference("Lapangan");
+        recyclerView = findViewById(R.id.rvBooking);
 
         btnBack.setOnClickListener(view -> super.onBackPressed());
         initEvent();
     }
 
     private void initEvent() {
-
-        recyclerView = findViewById(R.id.rvBooking);
-        recyclerView.setHasFixedSize(true);
+        loading = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
+        loading.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
+        loading.setTitle("Loading");
+        loading.show();
         recyclerView.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.VERTICAL,false));
 
          options = new FirebaseRecyclerOptions.Builder<Lapangan>()
@@ -65,16 +69,18 @@ public class BookingActivity extends AppCompatActivity {
         adapter = new FirebaseRecyclerAdapter<Lapangan, BookingAdapter>(options) {
             @Override
             protected void onBindViewHolder(@NonNull BookingAdapter holder, int position, @NonNull Lapangan model) {
-//                if (model.getGambar().isEmpty() && model.getGambar().equals("")){
-//                    holder.IVLapangan.setImageResource(R.drawable.ic_event);
-//                }else{
-//                    Picasso.get().load(model.getGambar()).into(holder.IVLapangan);
-//                }
+                loading.dismissWithAnimation();
+                if (model.getGambar().isEmpty() && model.getGambar().equals("")){
+                    holder.IVLapangan.setImageResource(R.drawable.ic_event);
+                }else{
+                    Picasso.get().load(model.getGambar()).into(holder.IVLapangan);
+                }
                 Log.d("CHECK BOOKING", model.getGambar() + ",  " + model.getHarga() + ",  " + model.getNama() + ",  " + model.getId());
                 holder.tvName.setText(model.getNama());
                 holder.tvHarga.setText(String.format("Rp%s", model.getHarga()));
                 holder.itemView.setOnClickListener(view -> {
-                    Toast.makeText(BookingActivity.this, "OKEY  " + adapter.getRef(position).getKey(), Toast.LENGTH_SHORT).show();
+                    Common.KEY_LAPANGAN = adapter.getRef(position).getKey();
+                    startActivity(new Intent(BookingActivity.this,FormBookingActivity.class));
                 });
             }
 
@@ -87,15 +93,6 @@ public class BookingActivity extends AppCompatActivity {
         };
         adapter.startListening();
         recyclerView.setAdapter(adapter);
-
-
     }
-
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-    }
-
 
 }

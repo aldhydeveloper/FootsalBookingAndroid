@@ -77,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initView() {
+
         tvFullName.setText(Common.Fullname);
         tvNoHp.setText(Common.NoHp);
         loading.dismissWithAnimation();
@@ -85,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+
         loading = new SweetAlertDialog(this, SweetAlertDialog.PROGRESS_TYPE);
         loading.getProgressHelper().setBarColor(Color.parseColor("#A5DC86"));
         loading.setTitle("Loading");

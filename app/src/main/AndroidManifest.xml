@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QueenFutsal"
         tools:replace="android:icon">
+        <activity android:name=".Activity.FormBookingActivity"></activity>
         <activity android:name=".Activity.BookingActivity" />
         <activity android:name=".Activity.SplashScreenActivity">
             <intent-filter>
